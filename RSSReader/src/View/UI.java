@@ -24,20 +24,36 @@ import javax.xml.bind.JAXBException;
 
 import Controller.RSSReader;
 import Model.Item;
-
+/**
+ * UI of this program.
+ * @author Rungroj Maipradit 5510546654
+ */
 public class UI extends JFrame{
+	/** Outer panel. */
 	private JPanel outer;
+	/** Inner panel. */
 	private JPanel inner;
+	/** Top panel in outer. */
 	private JPanel top;
+	/** Top panel in inner. */
 	private JPanel mid;
+	/** Search button. */
 	private JButton button;
+	/** Contain link. */
 	private JLabel link;
+	/** Receive input. */
 	private JTextField input;
+	/** Show description of selected item. */
 	private JTextArea desc;
+	/** Show all items. */
 	private JComboBox<String> list;
+	/** Show title of this RSS feeder. */
 	private JLabel title;
+	/** Refer to rssReader. */
 	private RSSReader rssReader;
-	
+	/**
+	 * Initial UI Component.
+	 */
 	private void iniComponent(){
 		outer = new JPanel(new BorderLayout());
 		top = new JPanel(new FlowLayout());
@@ -63,6 +79,10 @@ public class UI extends JFrame{
 		add(outer);
 	}
 	
+	/**
+	 * Constructor of this class Contain UI and actionListener.
+	 * @param rssReader controller
+	 */
 	public UI(RSSReader rssReader){
 		this.rssReader = rssReader;
 		
@@ -89,26 +109,18 @@ public class UI extends JFrame{
 			
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
 			}
 			
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
 			}
 			
 			@Override
 			public void mouseExited(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
 			}
 			
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				// TODO Auto-generated method stub
-				
 			}
 			
 			@Override
@@ -127,6 +139,10 @@ public class UI extends JFrame{
 		link.setText(item.getLink());
 	}
 
+	/**
+	 * Use for search all items from input.
+	 * @param text URL that use for search.
+	 */
 	public void search(String text) {
 		try {
 			rssReader.run(new URL(text));
@@ -136,6 +152,9 @@ public class UI extends JFrame{
 		}
 	}
 	
+	/**
+	 * Set text in title and list.
+	 */
 	public void setItem(){
 		title.setText(rssReader.getTitle());
 		clear();
@@ -143,6 +162,9 @@ public class UI extends JFrame{
 			list.addItem(item.getTitle());
 		}
 	}
+	/**
+	 * Remove old list item.
+	 */
 	public void clear(){
 		list.removeAllItems();
 	}
