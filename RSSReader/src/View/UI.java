@@ -2,7 +2,9 @@ package View;
 
 import java.awt.BorderLayout;
 import java.awt.Desktop;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -57,7 +59,8 @@ public class UI extends JFrame{
 	private void iniComponent(){
 		outer = new JPanel(new BorderLayout());
 		top = new JPanel(new FlowLayout());
-		input = new JTextField("         ");
+		input = new JTextField("");
+		input.setPreferredSize(new Dimension(200,30));
 		button = new JButton("Search");
 		top.add(input);
 		top.add(button);
