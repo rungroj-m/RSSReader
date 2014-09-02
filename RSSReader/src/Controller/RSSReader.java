@@ -44,7 +44,6 @@ public class RSSReader {
 		channel = rss.getChannel();
 		items = channel.getItems();
 		for (Item item : items) {
-			System.out.println(item.getTitle());
 			map.put(item.getTitle(), item);
 		}
 	}
