@@ -1,4 +1,4 @@
-package Controller;
+package controller;
 
 
 import java.net.URL;
@@ -10,12 +10,12 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 
-import Model.*;
+import model.*;
 /**
- * Controller of this program.
+ * Controller get URL from GUI to unmarshall and provides data to rss. 
  * @author Rungroj Maipradit 5510546654
  */
-public class RSSReader {
+public class RSSReaderController {
 	/** Map between item's name and item. */
 	private Map<String, Item> map;
 	/** Refer to RSS. */
@@ -27,7 +27,7 @@ public class RSSReader {
 	/**
 	 * Constructor of this class use for initialize map.
 	 */
-	public RSSReader(){
+	public RSSReaderController(){
 		map = new HashMap<String, Item>();
 	}
 	

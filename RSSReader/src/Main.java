@@ -1,7 +1,7 @@
 import java.awt.Dimension;
 
-import Controller.RSSReader;
-import View.UI;
+import view.GUI;
+import controller.RSSReaderController;
 
 /**
  * Main of this program.
@@ -10,14 +10,14 @@ import View.UI;
 public class Main {
 	
 	/**
-	 * Main of this program use to create UI.
+	 * Create gui and put controller in it.
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		UI ui = new UI(new RSSReader());
-		ui.setVisible(true);
-		ui.pack();
-		ui.setSize(new Dimension(1000,500));
+		GUI gui = new GUI(new RSSReaderController());
+		gui.setVisible(true);
+		gui.pack();
+		gui.setSize(new Dimension(1000,500));
 	}
 
 }

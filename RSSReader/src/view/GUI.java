@@ -1,4 +1,4 @@
-package View;
+package view;
 
 import java.awt.BorderLayout;
 import java.awt.Desktop;
@@ -24,13 +24,13 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.xml.bind.JAXBException;
 
-import Controller.RSSReader;
-import Model.Item;
+import model.Item;
+import controller.RSSReaderController;
 /**
  * UI of this program.
  * @author Rungroj Maipradit 5510546654
  */
-public class UI extends JFrame{
+public class GUI extends JFrame{
 	/** Outer panel. */
 	private JPanel outer;
 	/** Inner panel. */
@@ -52,7 +52,7 @@ public class UI extends JFrame{
 	/** Show title of this RSS feeder. */
 	private JLabel title;
 	/** Refer to rssReader. */
-	private RSSReader rssReader;
+	private RSSReaderController rssReader;
 	/**
 	 * Initial UI Component.
 	 */
@@ -86,7 +86,7 @@ public class UI extends JFrame{
 	 * Constructor of this class Contain UI and actionListener.
 	 * @param rssReader controller
 	 */
-	public UI(RSSReader rssReader){
+	public GUI(RSSReaderController rssReader){
 		this.rssReader = rssReader;
 		
 		iniComponent();
